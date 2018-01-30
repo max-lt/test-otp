@@ -1,0 +1,37 @@
+<section>
+
+  <div class="panel" ng-class="{'danger':error}">
+
+    <div class="header"><h3>TOTP auth demo</h3></div>
+    <div class="content">
+
+      <div ng-show="secret">
+        <qrcode data="qrcode"></qrcode>
+        <p>SECRET</p>
+        <p><span>{{secret}}</span></p>
+        <br>
+      </div>
+
+      <div ng-hide="secret">
+        <button class="button-outline" ng-click="getSecret()">Get a secret</button>
+      </div>
+
+      <form ng-submit="confirmSecret()">
+        <fieldset ng-disabled="disabled">
+          <input autocomplete="off"
+                 type="text" name="key"
+                 ng-model="key"
+                 placeholder="Two auth factor key">
+          <button type="submit" class="button-outline">Verify</button>
+        </fieldset>
+      </form>
+
+      <div>
+        {{message}}
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Title</title>
+  <link rel="stylesheet" href="/style.css"/>
+
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+  <script src="/node_modules/qrcode/build/qrcode.js"></script>
+  <script src="/node_modules/u2f-api-polyfill/u2f-api-polyfill.js"></script>
+
+  <script src="/index.js"></script>
+  <script src="/controllers/LoginController.js"></script>
+  <script src="/controllers/U2FController.js"></script>
+  <script src="/controllers/TOTPController.js"></script>
+
+  <base href="/"/>
+</head>
+<body ng-app="app" ng-controller="MainController">
+
+<nav class="navigation">
+    <ul class="navigation-list horizontal float-left">
+      <li class="navigation-item"><a class="navigation-link" ui-sref="root">root</a></li>
+      <li class="navigation-item" ng-if="user"><a class="navigation-link" ui-sref="u2f">U2F</a></li>
+      <li class="navigation-item" ng-if="user"><a class="navigation-link" ui-sref="totp">TOTP</a></li>
+    </ul>
+
+    <ul class="navigation-list horizontal float-right" ng-if="user">
+      <li class="navigation-item navigation-link">{{user.login}}</li>
+    </ul>
+</nav>
+
+<section id="main-container">
+
+  <div id="wrapper">
+    <div ui-view></div>
+  </div>
+
+</section>
+
+</body>
+</html>

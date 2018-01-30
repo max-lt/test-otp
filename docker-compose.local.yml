@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  test-otp:
+    volumes:
+     - ./server:/usr/src/app/server
+     - ./client:/usr/src/app/client
+     - ./cert:/usr/src/app/cert

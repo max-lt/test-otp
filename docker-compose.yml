@@ -1,0 +1,9 @@
+version: '2.1'
+
+services:
+  test-otp:
+    build: .
+    image: test-otp
+    ports:
+      - 80:80
+      - 443:443

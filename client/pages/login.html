@@ -1,0 +1,33 @@
+<section xmlns="http://www.w3.org/1999/html">
+
+  <div class="panel" ng-hide="secret" ng-class="{'danger':error}">
+
+    <div class="header"><h3>Login</h3></div>
+    <div class="content">
+
+      <form>
+        <fieldset ng-disabled="locked" class="vertical">
+          <input type="text" class="form-control" placeholder="Login" ng-model="user"/>
+          <input type="password" class="form-control" placeholder="Password (not checked)" ng-model="pass"/>
+
+          <br>
+
+          <button class="button-outline" ng-if="!logged()" ng-click="login()">Login</button>
+          <button class="button-outline" ng-if="!logged()" ng-click="register()">Register</button>
+          <button class="button-outline" ng-if="logged()" ng-click="logout()">Logout</button>
+
+        </fieldset>
+
+        <div ng-class="debug.err ? 'error' : 'success'"
+             ng-if="debug && (debug.err || debug.res)"
+             style="border-radius: 8px;padding: 10px">
+          <pre class="box" ng-show="debug.err"><code>{{debug.err | json}}</code></pre>
+          <pre class="box"><code>{{debug.res | json}}</code></pre>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</section>

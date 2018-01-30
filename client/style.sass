@@ -1,0 +1,163 @@
+$red-a100: #FF8A80
+$red-a200: #FF5252
+$red-300: #E57373
+$red-500: #F44336
+$red-600: #E53935
+$red-700: #D32F2F
+
+$green-300: #81C784
+$green-500: #4CAF50
+$green-700: #388E3C
+
+$grey-300: #E0E0E0
+
+$amber-100: #FFECB3
+$amber-200: #FFE082
+$amber-300: #FFD54F
+
+$cyan-300: #4DD0E1
+$cyan-500: #00BCD4
+$cyan-700: #0097A7
+
+$blue-grey-500: #607D8B
+$blue-grey-700: #455A64
+$blue-grey-800: #37474F
+
+$color-main-header: $red-a200 !default
+$color-sub-header: $red-a100 !default
+
+$color-primary: $blue-grey-500 !default
+$color-secondary: $blue-grey-800 !default
+
+@import "../node_modules/milligram/src/milligram"
+
+html, body
+  margin: 0
+  padding: 0
+
+.button-success
+  background-color: $green-500
+  border-color: $green-500
+  &:focus,
+  &:hover
+    background-color: $green-700
+    border-color: $green-700
+
+.button-info
+  background-color: $cyan-500
+  border-color: $cyan-500
+  &:focus,
+  &:hover
+    background-color: $cyan-700
+    border-color: $cyan-700
+
+.button-danger
+  background-color: $red-500
+  border-color: $red-500
+  &:focus,
+  &:hover
+    background-color: $red-700
+    border-color: $red-700
+
+.button-small
+  @extend .button
+  margin-bottom: 0
+  font-size: .8rem
+  height: 1.8rem
+  line-height: 1.6rem
+  padding: 0 1.5rem
+  vertical-align: text-top
+
+body
+  h1, h2, h3
+    padding: 1rem
+    margin: 0
+
+  h1
+    background-color: $color-main-header
+    margin: 0
+
+  h2
+    background-color: $color-sub-header
+
+  .content
+    margin: 2em 1em
+
+.center
+  display: table
+  margin-left: auto
+  margin-right: auto
+
+.box
+  background: #fff
+  border: 1px solid $grey-300
+  border-radius: 3px
+  margin-top: 1rem
+  margin-bottom: 1rem
+  .box-body, .box-head
+    h3
+      padding: 0
+    padding: 2.4rem 2.4rem 0
+  .box-head
+    text-align: center
+    &:after
+      content: ""
+      display: block
+      border-bottom: 1px solid $grey-300
+      width: 100%
+      padding-top: 2rem
+
+table
+  caption
+    border-bottom: 0.1rem solid $color-quinary
+    padding: 1.2rem 0
+    text-align: left
+
+.tag
+  @extend .button-small
+  background-color: $amber-200
+  border-color: $amber-200
+  cursor: default
+  color: $color-secondary
+  padding: 0 .5rem
+  &:focus,
+  &:hover
+    background-color: $amber-200
+    border-color: $amber-200
+    color: $color-secondary
+  &.black
+    color: #fff
+    border-color: $color-secondary
+    background-color: $color-secondary
+
+.navigation
+  background: #f4f5f6
+  border-bottom: .1rem solid #d1d1d1
+  display: block
+  height: 5.2rem
+  left: 0
+  max-width: 100%
+  position: fixed
+  right: 0
+  top: 0
+  width: 100%
+  z-index: 1
+  .navigation-link
+    display: inline
+    font-size: 1.6rem
+    line-height: 5.2rem
+    padding: 0
+    text-decoration: none
+  .navigation-list
+    list-style: none
+    margin-bottom: 0
+    &.float-left
+      margin-left: 2.5rem
+    &.float-right
+      margin-right: 2.5rem
+  li
+    margin: 0 1rem
+
+ul.horizontal
+  & > li
+    float: left
